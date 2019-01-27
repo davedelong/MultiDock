@@ -1,5 +1,5 @@
 //
-//  DockItemStackViewController.swift
+//  DockViewController.swift
 //  MultiDock
 //
 //  Created by Dave DeLong on 1/26/19.
@@ -8,7 +8,7 @@
 
 import Cocoa
 
-class DockItemStackViewController: MDViewController {
+class DockViewController: MDViewController {
 
     @IBOutlet private var stackView: NSStackView?
     

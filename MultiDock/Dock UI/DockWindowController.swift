@@ -13,7 +13,7 @@ class DockWindowController: NSWindowController, NSWindowDelegate {
     private var configuration: DockConfiguration
     
     private var tiles = Array<ClickableItem>()
-    private let stack = DockItemStackViewController()
+    private let stack = DockViewController()
     
     private var windowWidth: NSLayoutConstraint?
     private var windowHeight: NSLayoutConstraint?
