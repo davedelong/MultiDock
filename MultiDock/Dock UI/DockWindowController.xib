@@ -7,43 +7,19 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="DockWindowController" customModule="MultiDock" customModuleProvider="target">
             <connections>
-                <outlet property="stackView" destination="ryb-QK-0sT" id="Ozc-ab-Wfr"/>
                 <outlet property="window" destination="F0z-JX-Cv5" id="gIp-Ho-8D9"/>
             </connections>
         </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
-        <window title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" tabbingMode="disallowed" id="F0z-JX-Cv5">
-            <windowStyleMask key="styleMask" titled="YES"/>
+        <window title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" restorable="NO" hasShadow="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" tabbingMode="disallowed" id="F0z-JX-Cv5">
             <windowCollectionBehavior key="collectionBehavior" moveToActiveSpace="YES" transient="YES" ignoresCycle="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="196" y="240" width="480" height="270"/>
+            <rect key="contentRect" x="573" y="287" width="480" height="270"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
             <view key="contentView" wantsLayer="YES" id="se5-gp-TjO">
                 <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
                 <autoresizingMask key="autoresizingMask"/>
-                <subviews>
-                    <visualEffectView appearanceType="inheritedVibrantLight" blendingMode="behindWindow" material="underWindowBackground" state="active" translatesAutoresizingMaskIntoConstraints="NO" id="cA2-33-5n3">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
-                        <subviews>
-                            <stackView distribution="fillEqually" orientation="horizontal" alignment="centerY" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" verticalHuggingPriority="1000" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ryb-QK-0sT">
-                                <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
-                            </stackView>
-                        </subviews>
-                        <constraints>
-                            <constraint firstItem="ryb-QK-0sT" firstAttribute="leading" secondItem="cA2-33-5n3" secondAttribute="leading" id="6YQ-PP-4CO"/>
-                            <constraint firstAttribute="bottom" secondItem="ryb-QK-0sT" secondAttribute="bottom" id="9RH-Fb-kpv"/>
-                            <constraint firstAttribute="trailing" secondItem="ryb-QK-0sT" secondAttribute="trailing" id="LA5-cR-cds"/>
-                            <constraint firstItem="ryb-QK-0sT" firstAttribute="top" secondItem="cA2-33-5n3" secondAttribute="top" id="oCs-dj-ziZ"/>
-                        </constraints>
-                    </visualEffectView>
-                </subviews>
-                <constraints>
-                    <constraint firstAttribute="bottom" secondItem="cA2-33-5n3" secondAttribute="bottom" id="2Sm-UT-NKf"/>
-                    <constraint firstItem="cA2-33-5n3" firstAttribute="top" secondItem="se5-gp-TjO" secondAttribute="top" id="E92-Fw-b2L"/>
-                    <constraint firstAttribute="trailing" secondItem="cA2-33-5n3" secondAttribute="trailing" id="afJ-oJ-IVS"/>
-                    <constraint firstItem="cA2-33-5n3" firstAttribute="leading" secondItem="se5-gp-TjO" secondAttribute="leading" id="ngl-6S-iR1"/>
-                </constraints>
             </view>
             <connections>
                 <outlet property="delegate" destination="-2" id="0bl-1N-AYu"/>

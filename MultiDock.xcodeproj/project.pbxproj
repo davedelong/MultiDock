@@ -27,6 +27,9 @@
 		5501937E21FD0B4700336603 /* CGPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5501937D21FD0B4700336603 /* CGPoint.swift */; };
 		5501938121FD212500336603 /* DockItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5501937F21FD212500336603 /* DockItem.swift */; };
 		5501938221FD212500336603 /* DockItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5501938021FD212500336603 /* DockItem.xib */; };
+		5501939D21FD4F7400336603 /* DockItemStackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5501939B21FD4F7400336603 /* DockItemStackViewController.swift */; };
+		5501939E21FD4F7400336603 /* DockItemStackViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5501939C21FD4F7400336603 /* DockItemStackViewController.xib */; };
+		550193A021FD587F00336603 /* MDViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5501939F21FD587F00336603 /* MDViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -66,6 +69,9 @@
 		5501937D21FD0B4700336603 /* CGPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGPoint.swift; sourceTree = "<group>"; };
 		5501937F21FD212500336603 /* DockItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DockItem.swift; sourceTree = "<group>"; };
 		5501938021FD212500336603 /* DockItem.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DockItem.xib; sourceTree = "<group>"; };
+		5501939B21FD4F7400336603 /* DockItemStackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DockItemStackViewController.swift; sourceTree = "<group>"; };
+		5501939C21FD4F7400336603 /* DockItemStackViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DockItemStackViewController.xib; sourceTree = "<group>"; };
+		5501939F21FD587F00336603 /* MDViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MDViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,6 +155,7 @@
 				5501937921FD047A00336603 /* Dictionary.swift */,
 				5501937B21FD059500336603 /* CGRect.swift */,
 				5501937D21FD0B4700336603 /* CGPoint.swift */,
+				5501939F21FD587F00336603 /* MDViewController.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -158,6 +165,8 @@
 			children = (
 				5501936121FCE81B00336603 /* DockWindowController.swift */,
 				5501936221FCE81B00336603 /* DockWindowController.xib */,
+				5501939B21FD4F7400336603 /* DockItemStackViewController.swift */,
+				5501939C21FD4F7400336603 /* DockItemStackViewController.xib */,
 				5501937F21FD212500336603 /* DockItem.swift */,
 				5501938021FD212500336603 /* DockItem.xib */,
 			);
@@ -223,6 +232,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5501939E21FD4F7400336603 /* DockItemStackViewController.xib in Resources */,
 				5501936421FCE81B00336603 /* DockWindowController.xib in Resources */,
 				5501938221FD212500336603 /* DockItem.xib in Resources */,
 				5501935221FBD3E800336603 /* Assets.xcassets in Resources */,
@@ -243,12 +253,14 @@
 				5501937A21FD047A00336603 /* Dictionary.swift in Sources */,
 				5501935E21FBD62400336603 /* Window.swift in Sources */,
 				5501936321FCE81B00336603 /* DockWindowController.swift in Sources */,
+				5501939D21FD4F7400336603 /* DockItemStackViewController.swift in Sources */,
 				5501936B21FCF79C00336603 /* Observable+Combine.swift in Sources */,
 				5501936021FBE3AE00336603 /* WindowObserver.swift in Sources */,
 				5501936F21FCF8D200336603 /* Observable+Skip.swift in Sources */,
 				5501938121FD212500336603 /* DockItem.swift in Sources */,
 				5501936D21FCF84C00336603 /* Observable+Map.swift in Sources */,
 				5501936821FCF59100336603 /* Observable.swift in Sources */,
+				550193A021FD587F00336603 /* MDViewController.swift in Sources */,
 				5501936621FCE82800336603 /* DisplayObserver.swift in Sources */,
 				5501937721FCFCBD00336603 /* DockConfiguration.swift in Sources */,
 				5501937E21FD0B4700336603 /* CGPoint.swift in Sources */,

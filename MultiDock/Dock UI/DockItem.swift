@@ -11,9 +11,11 @@ import Cocoa
 class DockItem: NSCollectionViewItem {
 
     private let app: NSRunningApplication
+    private let itemHeight: NSLayoutGuide
     
-    init(app: NSRunningApplication) {
+    init(app: NSRunningApplication, guide: NSLayoutGuide) {
         self.app = app
+        self.itemHeight = guide
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -24,6 +26,10 @@ class DockItem: NSCollectionViewItem {
     override func viewDidLoad() {
         super.viewDidLoad()
         imageView?.image = app.icon
+    }
+    
+    override func viewDidAppear() {
+        view.heightAnchor.constraint(equalTo: itemHeight.heightAnchor).isActive = true
     }
     
 }

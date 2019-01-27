@@ -14,6 +14,7 @@ struct Window: Hashable {
     let windowID: CGWindowID
     let bounds: CGRect
     let owner: pid_t
+    let isVisible: Bool
     
     init?(windowDefinition: Dictionary<CFString, Any>) {
         guard let id = windowDefinition[kCGWindowNumber] as? NSNumber else { return nil }
@@ -22,12 +23,15 @@ struct Window: Hashable {
         guard let boundsDict = windowDefinition[kCGWindowBounds] as? NSDictionary else { return nil }
         guard let rectValue = CGRect(dictionaryRepresentation: boundsDict as CFDictionary) else { return nil }
         
+        let onscreen = windowDefinition[kCGWindowIsOnscreen] as? Bool
+        
         // filter out windows that represent NSStatusBarItems
         if rectValue.minY == 0 && rectValue.height == NSStatusBar.system.thickness { return nil }
         
         windowID = id.uint32Value
         bounds = rectValue
         owner = ownerPID.int32Value
+        isVisible = onscreen ?? false
     }
     
     func hash(into hasher: inout Hasher) {
@@ -37,6 +41,7 @@ struct Window: Hashable {
         hasher.combine(bounds.size.width)
         hasher.combine(bounds.size.height)
         hasher.combine(owner)
+        hasher.combine(isVisible)
     }
     
 }

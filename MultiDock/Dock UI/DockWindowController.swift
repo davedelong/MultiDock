@@ -8,14 +8,12 @@
 
 import Cocoa
 
-class DockWindowController: NSWindowController, NSCollectionViewDelegate, NSCollectionViewDataSource {
+class DockWindowController: NSWindowController, NSWindowDelegate {
 
     private var configuration: DockConfiguration
     
-    @IBOutlet private var collectionView: NSCollectionView?
-    @IBOutlet private var stackView: NSStackView?
-    
     private var tiles = Array<DockItem>()
+    private let stack = DockItemStackViewController()
     
     override var windowNibName: NSNib.Name? { return "DockWindowController" }
     
@@ -24,6 +22,7 @@ class DockWindowController: NSWindowController, NSCollectionViewDelegate, NSColl
         super.init(window: nil)
         
         showWindow(self)
+        stack.displayApps(configuration.apps.map { $0.0 })
     }
     
     required init?(coder: NSCoder) {
@@ -35,43 +34,34 @@ class DockWindowController: NSWindowController, NSCollectionViewDelegate, NSColl
         if newConfiguration == configuration { return }
         
         configuration = newConfiguration
-        collectionView?.reloadData()
-        positionWindow()
-        
-        tiles = newConfiguration.apps.map { DockItem(app: $0.0) }
-        stackView?.setViews(tiles.map { $0.view }, in: .center)
-    }
-    
-    private func positionWindow() {
-        guard let w = window else { return }
-        
-        let centerX = configuration.display.bounds.center.x
-        
-        var f = w.frame
-        f.center.x = centerX
-        f.origin.y = 0
-        w.setFrameOrigin(f.origin)
-        print("Moving dock to \(f.origin)")
+        stack.displayApps(configuration.apps.map { $0.0 })
+        window?.setFrame(configuration.display.bounds, display: false)
     }
     
     override func windowDidLoad() {
         super.windowDidLoad()
+        window?.delegate = self
+        window?.hasShadow = false
+        window?.isOpaque = false
+        window?.backgroundColor = .clear
+        
         // the dock is at level 20
         window?.level = NSWindow.Level(rawValue: 21)
         window?.title = configuration.display.name
-        positionWindow()
-    }
-    
-    func collectionView(_ collectionView: NSCollectionView, numberOfItemsInSection section: Int) -> Int {
-        print("Dock for \(configuration.display.name) has \(configuration.apps.count) items")
-        return configuration.apps.count
-    }
-    
-    func collectionView(_ collectionView: NSCollectionView, itemForRepresentedObjectAt indexPath: IndexPath) -> NSCollectionViewItem {
+        window?.setFrame(configuration.display.bounds, display: false)
         
-        let app = configuration.apps[indexPath.item]
-        return DockItem(app: app.0)
+        let dockView = stack.view
+        guard let container = window?.contentView else {
+            fatalError("window is missing its contentView")
+        }
+        
+        dockView.translatesAutoresizingMaskIntoConstraints = false
+        container.addSubview(dockView)
+        
+        NSLayoutConstraint.activate([
+            dockView.bottomAnchor.constraint(equalTo: container.bottomAnchor),
+            dockView.centerXAnchor.constraint(equalTo: container.centerXAnchor),
+            dockView.leadingAnchor.constraint(greaterThanOrEqualTo: container.leadingAnchor)
+        ])
     }
-    
-    
 }
