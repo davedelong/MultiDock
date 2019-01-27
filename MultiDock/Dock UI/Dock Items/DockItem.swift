@@ -13,4 +13,14 @@ protocol DockItem {
     var icon: Observable<NSImage> { get }
     var isRunning: Observable<Bool?> { get }
     var clickHandler: () -> Void { get }
+    
+    func rightClickMenu() -> NSMenu?
+}
+
+extension DockItem {
+    
+    func rightClickMenu() -> NSMenu? {
+        return nil
+    }
+    
 }

@@ -11,6 +11,7 @@ import Cocoa
 class MDViewController: NSViewController {
     
     private var isObservingFrame = false
+    private var rightClickRecognizer: NSClickGestureRecognizer?
     
     var mdView: MDView { return view as! MDView }
     
@@ -30,6 +31,8 @@ class MDViewController: NSViewController {
         } else {
             let newView = MDView(frame: view.frame)
             view.frame = newView.bounds
+            view.autoresizingMask = [.width, .height]
+            view.translatesAutoresizingMaskIntoConstraints = true
             newView.addSubview(view)
             
             newView.autoresizingMask = [.width, .height]
@@ -45,11 +48,22 @@ class MDViewController: NSViewController {
             NotificationCenter.default.addObserver(self, selector: #selector(viewDidResize(_:)), name: NSView.frameDidChangeNotification, object: view)
         }
         
+        if overrides(#selector(rightClickAction(_:)), upTo: MDViewController.self) {
+            let r = NSClickGestureRecognizer(target: self, action: #selector(rightClickAction(_:)))
+            r.numberOfClicksRequired = 1
+            r.buttonMask = 0x2
+            r.delaysPrimaryMouseButtonEvents = false
+            view.addGestureRecognizer(r)
+            rightClickRecognizer = r
+        }
+        
     }
     
     open func viewDidMoveToSuperview(_ superview: NSView?) { }
     
     open func viewDidMoveToWindow(_ window: NSWindow?) { }
+    
+    @objc open func rightClickAction(_ sender: Any) { }
     
     @objc open func viewDidResize(_ notification: Notification) { }
     
@@ -63,7 +77,7 @@ open class MDView: NSView {
     
     open override var acceptsFirstResponder: Bool {
         let superAccepts = super.acceptsFirstResponder
-        return superAccepts || cursor != nil
+        return superAccepts || cursor != nil || gestureRecognizers.isEmpty == false
     }
     
     override open func viewDidMoveToSuperview() {

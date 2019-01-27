@@ -8,7 +8,7 @@
 
 import Cocoa
 
-class ClickableItem: NSCollectionViewItem {
+class ClickableItem: MDViewController {
 
     private let item: DockItem
     private let itemHeight: NSLayoutGuide
@@ -49,6 +49,13 @@ class ClickableItem: NSCollectionViewItem {
     
     @IBAction func clickedButton(_ sender: NSButton) {
         item.clickHandler()
+    }
+    
+    override func rightClickAction(_ sender: Any) {
+        print("Right clicking?")
+        guard let m = item.rightClickMenu() else { return }
+        
+        NSMenu.popUpContextMenu(m, with: NSApp.currentEvent!, for: view)
     }
     
 }

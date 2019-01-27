@@ -13,7 +13,7 @@ class DockItemStackViewController: MDViewController {
     @IBOutlet private var stackView: NSStackView?
     
     private var apps = Array<NSRunningApplication>()
-    private var tiles = Array<NSViewController>()
+    private var tiles = Array<MDViewController>()
     private let guide = NSLayoutGuide()
     
     init() {
@@ -48,7 +48,7 @@ class DockItemStackViewController: MDViewController {
         addItem(ClickableItem(item: Trash.user, guide: guide))
     }
     
-    private func addItem(_ item: NSViewController) {
+    private func addItem(_ item: MDViewController) {
         addChild(item)
         tiles.append(item)
         stackView?.addView(item.view, in: .center)

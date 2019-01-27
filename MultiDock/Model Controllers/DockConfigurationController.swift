@@ -34,10 +34,16 @@ class DockConfigurationController {
         guard displays.isEmpty == false else { return }
         
         let runningApps = NSWorkspace.shared.runningApplications
-        let dockApps = runningApps.filter { $0.activationPolicy == .regular }.sorted { l, r -> Bool in
+        let currentApp = NSRunningApplication.current
+        
+        let dockApps = runningApps.filter { $0 != currentApp && $0.activationPolicy == .regular }
+        
+        let sortedApps = dockApps.sorted { l, r -> Bool in
+            // Finder always comes first
             if l.bundleIdentifier == "com.apple.finder" { return true }
             if r.bundleIdentifier == "com.apple.finder" { return false }
             
+            // Sort by launch date ascending
             switch (l.launchDate, r.launchDate) {
                 case (nil, .some(_)): return false
                 case (.some(_), nil): return true
@@ -45,10 +51,11 @@ class DockConfigurationController {
                 default: break
             }
             
+            // sort by process number ascending
             return l.processIdentifier < r.processIdentifier
         }
         
-        let appsByPID = Dictionary(keying: dockApps, by: { $0.processIdentifier })
+        let appsByPID = Dictionary(keying: sortedApps, by: { $0.processIdentifier })
         
         let windowsGroupedByDisplay = Dictionary(grouping: windows) { display(for: $0, from: displays) }
         

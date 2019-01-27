@@ -15,6 +15,9 @@ class DockWindowController: NSWindowController, NSWindowDelegate {
     private var tiles = Array<ClickableItem>()
     private let stack = DockItemStackViewController()
     
+    private var windowWidth: NSLayoutConstraint?
+    private var windowHeight: NSLayoutConstraint?
+    
     override var windowNibName: NSNib.Name? { return "DockWindowController" }
     
     init(configuration: DockConfiguration) {
@@ -36,6 +39,9 @@ class DockWindowController: NSWindowController, NSWindowDelegate {
         configuration = newConfiguration
         stack.displayApps(configuration.apps.map { $0.0 })
         window?.setFrame(configuration.display.bounds, display: false)
+        
+        windowWidth?.constant = configuration.display.bounds.width
+        windowHeight?.constant = configuration.display.bounds.height
     }
     
     override func windowDidLoad() {
@@ -48,7 +54,7 @@ class DockWindowController: NSWindowController, NSWindowDelegate {
         // the dock is at level 20
         window?.level = NSWindow.Level(rawValue: 21)
         window?.title = configuration.display.name
-        window?.setFrame(configuration.display.bounds, display: false)
+        window?.setFrame(configuration.display.bounds, display: true)
         
         let dockView = stack.view
         guard let container = window?.contentView else {
@@ -58,10 +64,18 @@ class DockWindowController: NSWindowController, NSWindowDelegate {
         dockView.translatesAutoresizingMaskIntoConstraints = false
         container.addSubview(dockView)
         
+        let w = container.widthAnchor.constraint(equalToConstant: configuration.display.bounds.width)
+        let h = container.heightAnchor.constraint(equalToConstant: configuration.display.bounds.height)
+        
         NSLayoutConstraint.activate([
+            w,
+            h,
             dockView.bottomAnchor.constraint(equalTo: container.bottomAnchor),
             dockView.centerXAnchor.constraint(equalTo: container.centerXAnchor),
             dockView.leadingAnchor.constraint(greaterThanOrEqualTo: container.leadingAnchor)
         ])
+        
+        windowWidth = w
+        windowHeight = h
     }
 }

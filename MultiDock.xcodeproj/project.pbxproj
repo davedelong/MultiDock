@@ -37,6 +37,8 @@
 		550193AB21FE450C00336603 /* Application.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550193AA21FE450C00336603 /* Application.swift */; };
 		550193AD21FE46E400336603 /* KVOObservable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550193AC21FE46E400336603 /* KVOObservable.swift */; };
 		550193AF21FE49CF00336603 /* Trash.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550193AE21FE49CF00336603 /* Trash.swift */; };
+		550193B121FE526C00336603 /* NSMenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550193B021FE526C00336603 /* NSMenuItem.swift */; };
+		550193B321FE53C200336603 /* NSWorkspace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550193B221FE53C200336603 /* NSWorkspace.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -86,6 +88,8 @@
 		550193AA21FE450C00336603 /* Application.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Application.swift; sourceTree = "<group>"; };
 		550193AC21FE46E400336603 /* KVOObservable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KVOObservable.swift; sourceTree = "<group>"; };
 		550193AE21FE49CF00336603 /* Trash.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trash.swift; sourceTree = "<group>"; };
+		550193B021FE526C00336603 /* NSMenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSMenuItem.swift; sourceTree = "<group>"; };
+		550193B221FE53C200336603 /* NSWorkspace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSWorkspace.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,7 +177,9 @@
 				5501937B21FD059500336603 /* CGRect.swift */,
 				5501937D21FD0B4700336603 /* CGPoint.swift */,
 				5501939F21FD587F00336603 /* MDViewController.swift */,
+				550193B021FE526C00336603 /* NSMenuItem.swift */,
 				550193A621FD6CFA00336603 /* NSObject.swift */,
+				550193B221FE53C200336603 /* NSWorkspace.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -282,6 +288,7 @@
 				5501937121FCFB5C00336603 /* Display.swift in Sources */,
 				550193AB21FE450C00336603 /* Application.swift in Sources */,
 				5501935021FBD3E800336603 /* AppDelegate.swift in Sources */,
+				550193B121FE526C00336603 /* NSMenuItem.swift in Sources */,
 				5501937A21FD047A00336603 /* Dictionary.swift in Sources */,
 				5501935E21FBD62400336603 /* Window.swift in Sources */,
 				550193A921FE437900336603 /* DockItem.swift in Sources */,
@@ -290,6 +297,7 @@
 				5501936B21FCF79C00336603 /* Observable+Combine.swift in Sources */,
 				5501936021FBE3AE00336603 /* WindowObserver.swift in Sources */,
 				5501936F21FCF8D200336603 /* Observable+Skip.swift in Sources */,
+				550193B321FE53C200336603 /* NSWorkspace.swift in Sources */,
 				5501938121FD212500336603 /* ClickableItem.swift in Sources */,
 				5501936D21FCF84C00336603 /* Observable+Map.swift in Sources */,
 				5501936821FCF59100336603 /* Observable.swift in Sources */,
