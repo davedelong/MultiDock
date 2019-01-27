@@ -5,9 +5,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <customObject id="-2" userLabel="File's Owner" customClass="DockItem" customModule="MultiDock" customModuleProvider="target">
+        <customObject id="-2" userLabel="File's Owner" customClass="ClickableItem" customModule="MultiDock" customModuleProvider="target">
             <connections>
                 <outlet property="button" destination="P5I-am-rh5" id="jhx-eM-Dug"/>
+                <outlet property="runningIndicator" destination="Jkk-Fq-FFY" id="xSO-Oa-bje"/>
                 <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
             </connections>
         </customObject>
@@ -41,6 +42,7 @@
             <constraints>
                 <constraint firstItem="Jkk-Fq-FFY" firstAttribute="centerX" secondItem="Hz6-mo-xeY" secondAttribute="centerX" id="0il-bE-Rgq"/>
                 <constraint firstItem="P5I-am-rh5" firstAttribute="centerX" secondItem="Hz6-mo-xeY" secondAttribute="centerX" id="2Tt-Q4-NA8"/>
+                <constraint firstAttribute="bottom" secondItem="P5I-am-rh5" secondAttribute="bottom" constant="26" id="Geq-6v-3jR"/>
                 <constraint firstItem="P5I-am-rh5" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" id="PNU-Yu-5Hb"/>
                 <constraint firstAttribute="bottom" secondItem="Jkk-Fq-FFY" secondAttribute="bottom" constant="6" id="btH-E1-3vP"/>
                 <constraint firstItem="Jkk-Fq-FFY" firstAttribute="top" secondItem="P5I-am-rh5" secondAttribute="bottom" constant="4" id="cZU-Xy-ZbC"/>

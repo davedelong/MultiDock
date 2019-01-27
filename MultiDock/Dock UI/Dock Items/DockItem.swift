@@ -2,40 +2,15 @@
 //  DockItem.swift
 //  MultiDock
 //
-//  Created by Dave DeLong on 1/26/19.
+//  Created by Dave DeLong on 1/27/19.
 //  Copyright © 2019 Syzygy. All rights reserved.
 //
 
 import Cocoa
 
-class DockItem: NSCollectionViewItem {
-
-    private let app: NSRunningApplication
-    private let itemHeight: NSLayoutGuide
-    
-    @IBOutlet private var button: NSButton?
-    
-    init(app: NSRunningApplication, guide: NSLayoutGuide) {
-        self.app = app
-        self.itemHeight = guide
-        super.init(nibName: nil, bundle: nil)
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        button?.image = app.icon
-    }
-    
-    override func viewDidAppear() {
-        view.heightAnchor.constraint(equalTo: itemHeight.heightAnchor).isActive = true
-    }
-    
-    @IBAction func clickedButton(_ sender: NSButton) {
-        app.activate(options: [])
-    }
-    
+protocol DockItem {
+    var name: Observable<String> { get }
+    var icon: Observable<NSImage> { get }
+    var isRunning: Observable<Bool?> { get }
+    var clickHandler: () -> Void { get }
 }

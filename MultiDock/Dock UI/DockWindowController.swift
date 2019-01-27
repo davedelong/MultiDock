@@ -12,7 +12,7 @@ class DockWindowController: NSWindowController, NSWindowDelegate {
 
     private var configuration: DockConfiguration
     
-    private var tiles = Array<DockItem>()
+    private var tiles = Array<ClickableItem>()
     private let stack = DockItemStackViewController()
     
     override var windowNibName: NSNib.Name? { return "DockWindowController" }

@@ -25,14 +25,18 @@
 		5501937A21FD047A00336603 /* Dictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5501937921FD047A00336603 /* Dictionary.swift */; };
 		5501937C21FD059500336603 /* CGRect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5501937B21FD059500336603 /* CGRect.swift */; };
 		5501937E21FD0B4700336603 /* CGPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5501937D21FD0B4700336603 /* CGPoint.swift */; };
-		5501938121FD212500336603 /* DockItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5501937F21FD212500336603 /* DockItem.swift */; };
-		5501938221FD212500336603 /* DockItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5501938021FD212500336603 /* DockItem.xib */; };
+		5501938121FD212500336603 /* ClickableItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5501937F21FD212500336603 /* ClickableItem.swift */; };
+		5501938221FD212500336603 /* ClickableItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5501938021FD212500336603 /* ClickableItem.xib */; };
 		5501939D21FD4F7400336603 /* DockItemStackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5501939B21FD4F7400336603 /* DockItemStackViewController.swift */; };
 		5501939E21FD4F7400336603 /* DockItemStackViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5501939C21FD4F7400336603 /* DockItemStackViewController.xib */; };
 		550193A021FD587F00336603 /* MDViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5501939F21FD587F00336603 /* MDViewController.swift */; };
 		550193A421FD64B200336603 /* SeparatorItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550193A221FD64B200336603 /* SeparatorItem.swift */; };
 		550193A521FD64B200336603 /* SeparatorItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 550193A321FD64B200336603 /* SeparatorItem.xib */; };
 		550193A721FD6CFB00336603 /* NSObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550193A621FD6CFA00336603 /* NSObject.swift */; };
+		550193A921FE437900336603 /* DockItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550193A821FE437900336603 /* DockItem.swift */; };
+		550193AB21FE450C00336603 /* Application.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550193AA21FE450C00336603 /* Application.swift */; };
+		550193AD21FE46E400336603 /* KVOObservable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550193AC21FE46E400336603 /* KVOObservable.swift */; };
+		550193AF21FE49CF00336603 /* Trash.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550193AE21FE49CF00336603 /* Trash.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -70,14 +74,18 @@
 		5501937921FD047A00336603 /* Dictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dictionary.swift; sourceTree = "<group>"; };
 		5501937B21FD059500336603 /* CGRect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGRect.swift; sourceTree = "<group>"; };
 		5501937D21FD0B4700336603 /* CGPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGPoint.swift; sourceTree = "<group>"; };
-		5501937F21FD212500336603 /* DockItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DockItem.swift; sourceTree = "<group>"; };
-		5501938021FD212500336603 /* DockItem.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DockItem.xib; sourceTree = "<group>"; };
+		5501937F21FD212500336603 /* ClickableItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClickableItem.swift; sourceTree = "<group>"; };
+		5501938021FD212500336603 /* ClickableItem.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ClickableItem.xib; sourceTree = "<group>"; };
 		5501939B21FD4F7400336603 /* DockItemStackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DockItemStackViewController.swift; sourceTree = "<group>"; };
 		5501939C21FD4F7400336603 /* DockItemStackViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DockItemStackViewController.xib; sourceTree = "<group>"; };
 		5501939F21FD587F00336603 /* MDViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MDViewController.swift; sourceTree = "<group>"; };
 		550193A221FD64B200336603 /* SeparatorItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeparatorItem.swift; sourceTree = "<group>"; };
 		550193A321FD64B200336603 /* SeparatorItem.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SeparatorItem.xib; sourceTree = "<group>"; };
 		550193A621FD6CFA00336603 /* NSObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSObject.swift; sourceTree = "<group>"; };
+		550193A821FE437900336603 /* DockItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DockItem.swift; sourceTree = "<group>"; };
+		550193AA21FE450C00336603 /* Application.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Application.swift; sourceTree = "<group>"; };
+		550193AC21FE46E400336603 /* KVOObservable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KVOObservable.swift; sourceTree = "<group>"; };
+		550193AE21FE49CF00336603 /* Trash.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trash.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +136,7 @@
 			isa = PBXGroup;
 			children = (
 				5501936721FCF59100336603 /* Observable.swift */,
+				550193AC21FE46E400336603 /* KVOObservable.swift */,
 				5501936A21FCF79C00336603 /* Observable+Combine.swift */,
 				5501936C21FCF84C00336603 /* Observable+Map.swift */,
 				5501936E21FCF8D200336603 /* Observable+Skip.swift */,
@@ -138,6 +147,8 @@
 		5501937221FCFB6400336603 /* Model Values */ = {
 			isa = PBXGroup;
 			children = (
+				550193AA21FE450C00336603 /* Application.swift */,
+				550193AE21FE49CF00336603 /* Trash.swift */,
 				5501935D21FBD62400336603 /* Window.swift */,
 				5501937021FCFB5C00336603 /* Display.swift */,
 				5501937621FCFCBD00336603 /* DockConfiguration.swift */,
@@ -182,8 +193,9 @@
 		550193A121FD649A00336603 /* Dock Items */ = {
 			isa = PBXGroup;
 			children = (
-				5501937F21FD212500336603 /* DockItem.swift */,
-				5501938021FD212500336603 /* DockItem.xib */,
+				550193A821FE437900336603 /* DockItem.swift */,
+				5501937F21FD212500336603 /* ClickableItem.swift */,
+				5501938021FD212500336603 /* ClickableItem.xib */,
 				550193A221FD64B200336603 /* SeparatorItem.swift */,
 				550193A321FD64B200336603 /* SeparatorItem.xib */,
 			);
@@ -252,7 +264,7 @@
 				5501939E21FD4F7400336603 /* DockItemStackViewController.xib in Resources */,
 				5501936421FCE81B00336603 /* DockWindowController.xib in Resources */,
 				550193A521FD64B200336603 /* SeparatorItem.xib in Resources */,
-				5501938221FD212500336603 /* DockItem.xib in Resources */,
+				5501938221FD212500336603 /* ClickableItem.xib in Resources */,
 				5501935221FBD3E800336603 /* Assets.xcassets in Resources */,
 				5501935521FBD3E800336603 /* MainMenu.xib in Resources */,
 			);
@@ -265,22 +277,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				550193AF21FE49CF00336603 /* Trash.swift in Sources */,
 				5501937521FCFC8800336603 /* DockConfigurationController.swift in Sources */,
 				5501937121FCFB5C00336603 /* Display.swift in Sources */,
+				550193AB21FE450C00336603 /* Application.swift in Sources */,
 				5501935021FBD3E800336603 /* AppDelegate.swift in Sources */,
 				5501937A21FD047A00336603 /* Dictionary.swift in Sources */,
 				5501935E21FBD62400336603 /* Window.swift in Sources */,
+				550193A921FE437900336603 /* DockItem.swift in Sources */,
 				5501936321FCE81B00336603 /* DockWindowController.swift in Sources */,
 				5501939D21FD4F7400336603 /* DockItemStackViewController.swift in Sources */,
 				5501936B21FCF79C00336603 /* Observable+Combine.swift in Sources */,
 				5501936021FBE3AE00336603 /* WindowObserver.swift in Sources */,
 				5501936F21FCF8D200336603 /* Observable+Skip.swift in Sources */,
-				5501938121FD212500336603 /* DockItem.swift in Sources */,
+				5501938121FD212500336603 /* ClickableItem.swift in Sources */,
 				5501936D21FCF84C00336603 /* Observable+Map.swift in Sources */,
 				5501936821FCF59100336603 /* Observable.swift in Sources */,
 				550193A021FD587F00336603 /* MDViewController.swift in Sources */,
 				5501936621FCE82800336603 /* DisplayObserver.swift in Sources */,
 				5501937721FCFCBD00336603 /* DockConfiguration.swift in Sources */,
+				550193AD21FE46E400336603 /* KVOObservable.swift in Sources */,
 				550193A421FD64B200336603 /* SeparatorItem.swift in Sources */,
 				550193A721FD6CFB00336603 /* NSObject.swift in Sources */,
 				5501937E21FD0B4700336603 /* CGPoint.swift in Sources */,

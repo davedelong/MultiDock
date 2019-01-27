@@ -35,6 +35,9 @@ class DockConfigurationController {
         
         let runningApps = NSWorkspace.shared.runningApplications
         let dockApps = runningApps.filter { $0.activationPolicy == .regular }.sorted { l, r -> Bool in
+            if l.bundleIdentifier == "com.apple.finder" { return true }
+            if r.bundleIdentifier == "com.apple.finder" { return false }
+            
             switch (l.launchDate, r.launchDate) {
                 case (nil, .some(_)): return false
                 case (.some(_), nil): return true

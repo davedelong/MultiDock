@@ -39,16 +39,19 @@ class DockItemStackViewController: MDViewController {
         
         
         apps = newApps
-        tiles = newApps.map { DockItem(app: $0, guide: guide) }
-        tiles.forEach {
-            addChild($0)
-            stackView?.addView($0.view, in: .center)
-        }
+        tiles = []
         
-        let separator = SeparatorItem(guide: guide)
-        addChild(separator)
-        tiles.append(separator)
-        stackView?.addView(separator.view, in: .center)
+        newApps.forEach {
+            addItem(ClickableItem(app: $0, guide: guide))
+        }
+        addItem(SeparatorItem(guide: guide))
+        addItem(ClickableItem(item: Trash.user, guide: guide))
+    }
+    
+    private func addItem(_ item: NSViewController) {
+        addChild(item)
+        tiles.append(item)
+        stackView?.addView(item.view, in: .center)
     }
     
 }
