@@ -30,6 +30,9 @@
 		5501939D21FD4F7400336603 /* DockItemStackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5501939B21FD4F7400336603 /* DockItemStackViewController.swift */; };
 		5501939E21FD4F7400336603 /* DockItemStackViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5501939C21FD4F7400336603 /* DockItemStackViewController.xib */; };
 		550193A021FD587F00336603 /* MDViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5501939F21FD587F00336603 /* MDViewController.swift */; };
+		550193A421FD64B200336603 /* SeparatorItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550193A221FD64B200336603 /* SeparatorItem.swift */; };
+		550193A521FD64B200336603 /* SeparatorItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 550193A321FD64B200336603 /* SeparatorItem.xib */; };
+		550193A721FD6CFB00336603 /* NSObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550193A621FD6CFA00336603 /* NSObject.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -72,6 +75,9 @@
 		5501939B21FD4F7400336603 /* DockItemStackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DockItemStackViewController.swift; sourceTree = "<group>"; };
 		5501939C21FD4F7400336603 /* DockItemStackViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DockItemStackViewController.xib; sourceTree = "<group>"; };
 		5501939F21FD587F00336603 /* MDViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MDViewController.swift; sourceTree = "<group>"; };
+		550193A221FD64B200336603 /* SeparatorItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeparatorItem.swift; sourceTree = "<group>"; };
+		550193A321FD64B200336603 /* SeparatorItem.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SeparatorItem.xib; sourceTree = "<group>"; };
+		550193A621FD6CFA00336603 /* NSObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSObject.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,6 +162,7 @@
 				5501937B21FD059500336603 /* CGRect.swift */,
 				5501937D21FD0B4700336603 /* CGPoint.swift */,
 				5501939F21FD587F00336603 /* MDViewController.swift */,
+				550193A621FD6CFA00336603 /* NSObject.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -167,10 +174,20 @@
 				5501936221FCE81B00336603 /* DockWindowController.xib */,
 				5501939B21FD4F7400336603 /* DockItemStackViewController.swift */,
 				5501939C21FD4F7400336603 /* DockItemStackViewController.xib */,
-				5501937F21FD212500336603 /* DockItem.swift */,
-				5501938021FD212500336603 /* DockItem.xib */,
+				550193A121FD649A00336603 /* Dock Items */,
 			);
 			path = "Dock UI";
+			sourceTree = "<group>";
+		};
+		550193A121FD649A00336603 /* Dock Items */ = {
+			isa = PBXGroup;
+			children = (
+				5501937F21FD212500336603 /* DockItem.swift */,
+				5501938021FD212500336603 /* DockItem.xib */,
+				550193A221FD64B200336603 /* SeparatorItem.swift */,
+				550193A321FD64B200336603 /* SeparatorItem.xib */,
+			);
+			path = "Dock Items";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -234,6 +251,7 @@
 			files = (
 				5501939E21FD4F7400336603 /* DockItemStackViewController.xib in Resources */,
 				5501936421FCE81B00336603 /* DockWindowController.xib in Resources */,
+				550193A521FD64B200336603 /* SeparatorItem.xib in Resources */,
 				5501938221FD212500336603 /* DockItem.xib in Resources */,
 				5501935221FBD3E800336603 /* Assets.xcassets in Resources */,
 				5501935521FBD3E800336603 /* MainMenu.xib in Resources */,
@@ -263,6 +281,8 @@
 				550193A021FD587F00336603 /* MDViewController.swift in Sources */,
 				5501936621FCE82800336603 /* DisplayObserver.swift in Sources */,
 				5501937721FCFCBD00336603 /* DockConfiguration.swift in Sources */,
+				550193A421FD64B200336603 /* SeparatorItem.swift in Sources */,
+				550193A721FD6CFB00336603 /* NSObject.swift in Sources */,
 				5501937E21FD0B4700336603 /* CGPoint.swift in Sources */,
 				5501937C21FD059500336603 /* CGRect.swift in Sources */,
 			);

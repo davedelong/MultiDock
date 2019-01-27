@@ -10,6 +10,16 @@ import Cocoa
 
 class MDViewController: NSViewController {
     
+    private var isObservingFrame = false
+    
+    var mdView: MDView { return view as! MDView }
+    
+    deinit {
+        if isObservingFrame {
+            NotificationCenter.default.removeObserver(self, name: NSView.frameDidChangeNotification, object: view)
+        }
+    }
+    
     open override func loadView() {
         super.loadView()
         
@@ -30,17 +40,31 @@ class MDViewController: NSViewController {
         }
         mdv.controller = self
         
+        if overrides(#selector(viewDidResize(_:)), upTo: MDViewController.self) {
+            isObservingFrame = true
+            NotificationCenter.default.addObserver(self, selector: #selector(viewDidResize(_:)), name: NSView.frameDidChangeNotification, object: view)
+        }
+        
     }
     
     open func viewDidMoveToSuperview(_ superview: NSView?) { }
     
     open func viewDidMoveToWindow(_ window: NSWindow?) { }
     
+    @objc open func viewDidResize(_ notification: Notification) { }
+    
 }
 
 open class MDView: NSView {
     
     fileprivate(set) weak var controller: MDViewController?
+    
+    var cursor: NSCursor?
+    
+    open override var acceptsFirstResponder: Bool {
+        let superAccepts = super.acceptsFirstResponder
+        return superAccepts || cursor != nil
+    }
     
     override open func viewDidMoveToSuperview() {
         super.viewDidMoveToSuperview()
@@ -50,6 +74,13 @@ open class MDView: NSView {
     override open func viewDidMoveToWindow() {
         super.viewDidMoveToWindow()
         controller?.viewDidMoveToWindow(self.window)
+    }
+    
+    open override func resetCursorRects() {
+        if let c = cursor {
+            print("resetting rect for \(self)")
+            addCursorRect(bounds, cursor: c)
+        }
     }
     
 }

@@ -21,14 +21,14 @@
                     <rect key="frame" x="0.0" y="0.0" width="480" height="272"/>
                     <subviews>
                         <stackView distribution="equalSpacing" orientation="horizontal" alignment="top" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nIi-YK-aAf">
-                            <rect key="frame" x="20" y="0.0" width="440" height="252"/>
+                            <rect key="frame" x="12" y="0.0" width="456" height="272"/>
                         </stackView>
                     </subviews>
                     <constraints>
-                        <constraint firstItem="nIi-YK-aAf" firstAttribute="leading" secondItem="Po4-IR-XRh" secondAttribute="leading" constant="20" id="Ewb-fQ-jYf"/>
-                        <constraint firstAttribute="trailing" secondItem="nIi-YK-aAf" secondAttribute="trailing" constant="20" id="OS2-Ld-zC8"/>
+                        <constraint firstItem="nIi-YK-aAf" firstAttribute="leading" secondItem="Po4-IR-XRh" secondAttribute="leading" constant="12" id="Ewb-fQ-jYf"/>
+                        <constraint firstAttribute="trailing" secondItem="nIi-YK-aAf" secondAttribute="trailing" constant="12" id="OS2-Ld-zC8"/>
                         <constraint firstAttribute="bottom" secondItem="nIi-YK-aAf" secondAttribute="bottom" id="Wf9-k3-Rk8"/>
-                        <constraint firstItem="nIi-YK-aAf" firstAttribute="top" secondItem="Po4-IR-XRh" secondAttribute="top" constant="20" id="usw-89-U80"/>
+                        <constraint firstItem="nIi-YK-aAf" firstAttribute="top" secondItem="Po4-IR-XRh" secondAttribute="top" id="usw-89-U80"/>
                     </constraints>
                 </visualEffectView>
             </subviews>

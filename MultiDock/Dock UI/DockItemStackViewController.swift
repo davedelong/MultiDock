@@ -13,7 +13,7 @@ class DockItemStackViewController: MDViewController {
     @IBOutlet private var stackView: NSStackView?
     
     private var apps = Array<NSRunningApplication>()
-    private var tiles = Array<DockItem>()
+    private var tiles = Array<NSViewController>()
     private let guide = NSLayoutGuide()
     
     init() {
@@ -44,6 +44,11 @@ class DockItemStackViewController: MDViewController {
             addChild($0)
             stackView?.addView($0.view, in: .center)
         }
+        
+        let separator = SeparatorItem(guide: guide)
+        addChild(separator)
+        tiles.append(separator)
+        stackView?.addView(separator.view, in: .center)
     }
     
 }

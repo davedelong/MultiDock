@@ -46,23 +46,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     func applicationWillTerminate(_ aNotification: Notification) {
         // Insert code here to tear down your application
     }
-    
-    func getWindows() {
-        guard let results = CGWindowListCopyWindowInfo([.optionOnScreenOnly, .excludeDesktopElements], kCGNullWindowID) else { return }
-        let nsResults = results as NSArray
-        guard let typedResults = nsResults as? Array<Dictionary<CFString, Any>> else { return }
-        
-        let windows = typedResults.compactMap(Window.init(windowDefinition:))
-        
-        let runningApps = NSWorkspace.shared.runningApplications
-        let dockApps = runningApps.filter { $0.activationPolicy == .regular }
-        
-        let appsByPIDs = Dictionary(grouping: dockApps, by: { $0.processIdentifier })
-        
-        let appWindows = windows.filter { appsByPIDs[$0.owner] != nil }
-        
-        print("\(appWindows)")
-    }
 
 
 }
