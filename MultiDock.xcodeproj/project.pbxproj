@@ -10,7 +10,37 @@
 		5501935021FBD3E800336603 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5501934F21FBD3E800336603 /* AppDelegate.swift */; };
 		5501935221FBD3E800336603 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5501935121FBD3E800336603 /* Assets.xcassets */; };
 		5501935521FBD3E800336603 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5501935321FBD3E800336603 /* MainMenu.xib */; };
+		5501935E21FBD62400336603 /* Window.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5501935D21FBD62400336603 /* Window.swift */; };
+		5501936021FBE3AE00336603 /* WindowObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5501935F21FBE3AE00336603 /* WindowObserver.swift */; };
+		5501936321FCE81B00336603 /* DockWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5501936121FCE81B00336603 /* DockWindowController.swift */; };
+		5501936421FCE81B00336603 /* DockWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5501936221FCE81B00336603 /* DockWindowController.xib */; };
+		5501936621FCE82800336603 /* DisplayObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5501936521FCE82800336603 /* DisplayObserver.swift */; };
+		5501936821FCF59100336603 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5501936721FCF59100336603 /* Observable.swift */; };
+		5501936B21FCF79C00336603 /* Observable+Combine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5501936A21FCF79C00336603 /* Observable+Combine.swift */; };
+		5501936D21FCF84C00336603 /* Observable+Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5501936C21FCF84C00336603 /* Observable+Map.swift */; };
+		5501936F21FCF8D200336603 /* Observable+Skip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5501936E21FCF8D200336603 /* Observable+Skip.swift */; };
+		5501937121FCFB5C00336603 /* Display.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5501937021FCFB5C00336603 /* Display.swift */; };
+		5501937521FCFC8800336603 /* DockConfigurationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5501937421FCFC8800336603 /* DockConfigurationController.swift */; };
+		5501937721FCFCBD00336603 /* DockConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5501937621FCFCBD00336603 /* DockConfiguration.swift */; };
+		5501937A21FD047A00336603 /* Dictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5501937921FD047A00336603 /* Dictionary.swift */; };
+		5501937C21FD059500336603 /* CGRect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5501937B21FD059500336603 /* CGRect.swift */; };
+		5501937E21FD0B4700336603 /* CGPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5501937D21FD0B4700336603 /* CGPoint.swift */; };
+		5501938121FD212500336603 /* DockItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5501937F21FD212500336603 /* DockItem.swift */; };
+		5501938221FD212500336603 /* DockItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5501938021FD212500336603 /* DockItem.xib */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		5501939721FD489100336603 /* Embed XPC Services */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/XPCServices";
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			name = "Embed XPC Services";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		5501934C21FBD3E800336603 /* MultiDock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MultiDock.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -19,6 +49,23 @@
 		5501935421FBD3E800336603 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		5501935621FBD3E800336603 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5501935721FBD3E800336603 /* MultiDock.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MultiDock.entitlements; sourceTree = "<group>"; };
+		5501935D21FBD62400336603 /* Window.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Window.swift; sourceTree = "<group>"; };
+		5501935F21FBE3AE00336603 /* WindowObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowObserver.swift; sourceTree = "<group>"; };
+		5501936121FCE81B00336603 /* DockWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DockWindowController.swift; sourceTree = "<group>"; };
+		5501936221FCE81B00336603 /* DockWindowController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DockWindowController.xib; sourceTree = "<group>"; };
+		5501936521FCE82800336603 /* DisplayObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayObserver.swift; sourceTree = "<group>"; };
+		5501936721FCF59100336603 /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
+		5501936A21FCF79C00336603 /* Observable+Combine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Observable+Combine.swift"; sourceTree = "<group>"; };
+		5501936C21FCF84C00336603 /* Observable+Map.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Observable+Map.swift"; sourceTree = "<group>"; };
+		5501936E21FCF8D200336603 /* Observable+Skip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Observable+Skip.swift"; sourceTree = "<group>"; };
+		5501937021FCFB5C00336603 /* Display.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Display.swift; sourceTree = "<group>"; };
+		5501937421FCFC8800336603 /* DockConfigurationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DockConfigurationController.swift; sourceTree = "<group>"; };
+		5501937621FCFCBD00336603 /* DockConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DockConfiguration.swift; sourceTree = "<group>"; };
+		5501937921FD047A00336603 /* Dictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dictionary.swift; sourceTree = "<group>"; };
+		5501937B21FD059500336603 /* CGRect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGRect.swift; sourceTree = "<group>"; };
+		5501937D21FD0B4700336603 /* CGPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGPoint.swift; sourceTree = "<group>"; };
+		5501937F21FD212500336603 /* DockItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DockItem.swift; sourceTree = "<group>"; };
+		5501938021FD212500336603 /* DockItem.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DockItem.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,12 +99,69 @@
 			isa = PBXGroup;
 			children = (
 				5501934F21FBD3E800336603 /* AppDelegate.swift */,
+				5501938321FD279300336603 /* Dock UI */,
+				5501937321FCFC6B00336603 /* Model Controllers */,
+				5501937221FCFB6400336603 /* Model Values */,
+				5501936921FCF79200336603 /* Observable */,
+				5501937821FD047200336603 /* Extensions */,
 				5501935121FBD3E800336603 /* Assets.xcassets */,
 				5501935321FBD3E800336603 /* MainMenu.xib */,
 				5501935621FBD3E800336603 /* Info.plist */,
 				5501935721FBD3E800336603 /* MultiDock.entitlements */,
 			);
 			path = MultiDock;
+			sourceTree = "<group>";
+		};
+		5501936921FCF79200336603 /* Observable */ = {
+			isa = PBXGroup;
+			children = (
+				5501936721FCF59100336603 /* Observable.swift */,
+				5501936A21FCF79C00336603 /* Observable+Combine.swift */,
+				5501936C21FCF84C00336603 /* Observable+Map.swift */,
+				5501936E21FCF8D200336603 /* Observable+Skip.swift */,
+			);
+			path = Observable;
+			sourceTree = "<group>";
+		};
+		5501937221FCFB6400336603 /* Model Values */ = {
+			isa = PBXGroup;
+			children = (
+				5501935D21FBD62400336603 /* Window.swift */,
+				5501937021FCFB5C00336603 /* Display.swift */,
+				5501937621FCFCBD00336603 /* DockConfiguration.swift */,
+			);
+			path = "Model Values";
+			sourceTree = "<group>";
+		};
+		5501937321FCFC6B00336603 /* Model Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				5501935F21FBE3AE00336603 /* WindowObserver.swift */,
+				5501936521FCE82800336603 /* DisplayObserver.swift */,
+				5501937421FCFC8800336603 /* DockConfigurationController.swift */,
+			);
+			path = "Model Controllers";
+			sourceTree = "<group>";
+		};
+		5501937821FD047200336603 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				5501937921FD047A00336603 /* Dictionary.swift */,
+				5501937B21FD059500336603 /* CGRect.swift */,
+				5501937D21FD0B4700336603 /* CGPoint.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		5501938321FD279300336603 /* Dock UI */ = {
+			isa = PBXGroup;
+			children = (
+				5501936121FCE81B00336603 /* DockWindowController.swift */,
+				5501936221FCE81B00336603 /* DockWindowController.xib */,
+				5501937F21FD212500336603 /* DockItem.swift */,
+				5501938021FD212500336603 /* DockItem.xib */,
+			);
+			path = "Dock UI";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -70,6 +174,7 @@
 				5501934821FBD3E800336603 /* Sources */,
 				5501934921FBD3E800336603 /* Frameworks */,
 				5501934A21FBD3E800336603 /* Resources */,
+				5501939721FD489100336603 /* Embed XPC Services */,
 			);
 			buildRules = (
 			);
@@ -118,6 +223,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5501936421FCE81B00336603 /* DockWindowController.xib in Resources */,
+				5501938221FD212500336603 /* DockItem.xib in Resources */,
 				5501935221FBD3E800336603 /* Assets.xcassets in Resources */,
 				5501935521FBD3E800336603 /* MainMenu.xib in Resources */,
 			);
@@ -130,7 +237,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5501937521FCFC8800336603 /* DockConfigurationController.swift in Sources */,
+				5501937121FCFB5C00336603 /* Display.swift in Sources */,
 				5501935021FBD3E800336603 /* AppDelegate.swift in Sources */,
+				5501937A21FD047A00336603 /* Dictionary.swift in Sources */,
+				5501935E21FBD62400336603 /* Window.swift in Sources */,
+				5501936321FCE81B00336603 /* DockWindowController.swift in Sources */,
+				5501936B21FCF79C00336603 /* Observable+Combine.swift in Sources */,
+				5501936021FBE3AE00336603 /* WindowObserver.swift in Sources */,
+				5501936F21FCF8D200336603 /* Observable+Skip.swift in Sources */,
+				5501938121FD212500336603 /* DockItem.swift in Sources */,
+				5501936D21FCF84C00336603 /* Observable+Map.swift in Sources */,
+				5501936821FCF59100336603 /* Observable.swift in Sources */,
+				5501936621FCE82800336603 /* DisplayObserver.swift in Sources */,
+				5501937721FCFCBD00336603 /* DockConfiguration.swift in Sources */,
+				5501937E21FD0B4700336603 /* CGPoint.swift in Sources */,
+				5501937C21FD059500336603 /* CGRect.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
