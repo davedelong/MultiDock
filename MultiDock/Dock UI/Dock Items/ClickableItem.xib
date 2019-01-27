@@ -8,18 +8,18 @@
         <customObject id="-2" userLabel="File's Owner" customClass="ClickableItem" customModule="MultiDock" customModuleProvider="target">
             <connections>
                 <outlet property="button" destination="P5I-am-rh5" id="jhx-eM-Dug"/>
-                <outlet property="runningIndicator" destination="Jkk-Fq-FFY" id="xSO-Oa-bje"/>
+                <outlet property="runningIndicator" destination="paG-Z0-Uqs" id="9MY-8C-Gy2"/>
                 <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
             </connections>
         </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <customView id="Hz6-mo-xeY" customClass="MDView" customModule="MultiDock" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="234" height="272"/>
+            <rect key="frame" x="0.0" y="0.0" width="232" height="248"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
                 <button translatesAutoresizingMaskIntoConstraints="NO" id="P5I-am-rh5">
-                    <rect key="frame" x="0.0" y="26" width="234" height="234"/>
+                    <rect key="frame" x="0.0" y="8" width="232" height="232"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="P5I-am-rh5" secondAttribute="height" multiplier="1:1" id="cQd-Xm-ilm"/>
                     </constraints>
@@ -31,22 +31,21 @@
                         <action selector="clickedButton:" target="-2" id="E4D-T5-qA1"/>
                     </connections>
                 </button>
-                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Jkk-Fq-FFY">
-                    <rect key="frame" x="109" y="5" width="18" height="18"/>
-                    <buttonCell key="cell" type="radio" title="Running" bezelStyle="regularSquare" imagePosition="only" alignment="left" state="on" inset="2" id="fu3-ns-Dc1">
-                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                        <font key="font" metaFont="system"/>
-                    </buttonCell>
-                </button>
+                <progressIndicator wantsLayer="YES" horizontalHuggingPriority="750" verticalHuggingPriority="750" maxValue="100" doubleValue="100" bezeled="NO" controlSize="small" style="spinning" translatesAutoresizingMaskIntoConstraints="NO" id="paG-Z0-Uqs">
+                    <rect key="frame" x="114" y="2" width="4" height="4"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="4" id="2oj-Yh-fdn"/>
+                        <constraint firstAttribute="width" secondItem="paG-Z0-Uqs" secondAttribute="height" multiplier="1:1" id="kNY-l9-Rbg"/>
+                    </constraints>
+                </progressIndicator>
             </subviews>
             <constraints>
-                <constraint firstItem="Jkk-Fq-FFY" firstAttribute="centerX" secondItem="Hz6-mo-xeY" secondAttribute="centerX" id="0il-bE-Rgq"/>
                 <constraint firstItem="P5I-am-rh5" firstAttribute="centerX" secondItem="Hz6-mo-xeY" secondAttribute="centerX" id="2Tt-Q4-NA8"/>
-                <constraint firstAttribute="bottom" secondItem="P5I-am-rh5" secondAttribute="bottom" constant="26" id="Geq-6v-3jR"/>
+                <constraint firstItem="paG-Z0-Uqs" firstAttribute="centerX" secondItem="Hz6-mo-xeY" secondAttribute="centerX" id="KCi-Ql-D34"/>
+                <constraint firstAttribute="bottom" secondItem="paG-Z0-Uqs" secondAttribute="bottom" constant="2" id="Omf-YM-drO"/>
                 <constraint firstItem="P5I-am-rh5" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" id="PNU-Yu-5Hb"/>
-                <constraint firstAttribute="bottom" secondItem="Jkk-Fq-FFY" secondAttribute="bottom" constant="6" id="btH-E1-3vP"/>
-                <constraint firstItem="Jkk-Fq-FFY" firstAttribute="top" secondItem="P5I-am-rh5" secondAttribute="bottom" constant="4" id="cZU-Xy-ZbC"/>
-                <constraint firstItem="P5I-am-rh5" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" constant="12" id="ejQ-3t-o8N"/>
+                <constraint firstItem="P5I-am-rh5" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" constant="8" id="ejQ-3t-o8N"/>
+                <constraint firstItem="P5I-am-rh5" firstAttribute="centerY" secondItem="Hz6-mo-xeY" secondAttribute="centerY" id="kbg-H1-TNl"/>
             </constraints>
         </customView>
     </objects>

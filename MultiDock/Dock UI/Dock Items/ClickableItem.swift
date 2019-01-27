@@ -14,7 +14,7 @@ class ClickableItem: MDViewController {
     private let itemHeight: NSLayoutGuide
     
     @IBOutlet private var button: NSButton?
-    @IBOutlet private var runningIndicator: NSButton?
+    @IBOutlet private var runningIndicator: NSProgressIndicator?
     
     convenience init(app: NSRunningApplication, guide: NSLayoutGuide) {
         self.init(item: Application(runningApplication: app), guide: guide)
@@ -39,7 +39,7 @@ class ClickableItem: MDViewController {
         
         item.isRunning.observe { [weak self] state in
             self?.runningIndicator?.isHidden = (state == nil)
-            self?.runningIndicator?.state = (state == true) ? .on : .off
+            self?.runningIndicator?.doubleValue = (state == true) ? 100 : 0
         }
     }
     

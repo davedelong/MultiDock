@@ -27,6 +27,9 @@ class DockItemStackViewController: MDViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.addLayoutGuide(guide)
+        mdView.acceptsFirstResponder = true
+        view.layer?.cornerRadius = 6
+        view.layer?.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
     }
     
     func displayApps(_ newApps: Array<NSRunningApplication>) {

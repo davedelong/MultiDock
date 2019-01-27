@@ -14,7 +14,7 @@ class SeparatorItem: MDViewController {
     
     init(guide: NSLayoutGuide) {
         preferredHeight = guide.heightAnchor.constraint(equalToConstant: 64)
-        preferredHeight.priority = .defaultHigh
+        preferredHeight.priority = .init(rawValue: 999)
         super.init(nibName: nil, bundle: nil)
     }
     

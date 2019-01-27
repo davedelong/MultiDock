@@ -75,9 +75,24 @@ open class MDView: NSView {
     
     var cursor: NSCursor?
     
+    private var _wantsFirstResponder: Bool? = nil
+    
+    open override func awakeFromNib() {
+        super.awakeFromNib()
+        layer?.backgroundColor = NSColor.clear.cgColor
+    }
+    
     open override var acceptsFirstResponder: Bool {
-        let superAccepts = super.acceptsFirstResponder
-        return superAccepts || cursor != nil || gestureRecognizers.isEmpty == false
+        get {
+            let superAccepts = super.acceptsFirstResponder
+            let wantsResponder = _wantsFirstResponder ?? false
+            let hasCursor = cursor != nil
+            let hasGestures = gestureRecognizers.isEmpty == false
+            return superAccepts || hasCursor || hasGestures || wantsResponder
+        }
+        set {
+            _wantsFirstResponder = newValue
+        }
     }
     
     override open func viewDidMoveToSuperview() {
