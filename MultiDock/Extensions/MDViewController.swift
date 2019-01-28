@@ -55,6 +55,8 @@ class MDViewController: NSViewController {
             r.delaysPrimaryMouseButtonEvents = false
             view.addGestureRecognizer(r)
             rightClickRecognizer = r
+            
+            mdv.acceptsFirstResponder = true
         }
         
     }
@@ -67,28 +69,24 @@ class MDViewController: NSViewController {
     
     @objc open func viewDidResize(_ notification: Notification) { }
     
+    @objc open func resetViewCursorRects() { }
+    
+    @objc open func updateViewTrackingAreas() { }
+    
 }
 
 open class MDView: NSView {
     
     fileprivate(set) weak var controller: MDViewController?
     
-    var cursor: NSCursor?
-    
     private var _wantsFirstResponder: Bool? = nil
-    
-    open override func awakeFromNib() {
-        super.awakeFromNib()
-        layer?.backgroundColor = NSColor.clear.cgColor
-    }
     
     open override var acceptsFirstResponder: Bool {
         get {
             let superAccepts = super.acceptsFirstResponder
             let wantsResponder = _wantsFirstResponder ?? false
-            let hasCursor = cursor != nil
             let hasGestures = gestureRecognizers.isEmpty == false
-            return superAccepts || hasCursor || hasGestures || wantsResponder
+            return superAccepts || hasGestures || wantsResponder
         }
         set {
             _wantsFirstResponder = newValue
@@ -106,10 +104,17 @@ open class MDView: NSView {
     }
     
     open override func resetCursorRects() {
-        if let c = cursor {
-            print("resetting rect for \(self)")
-            addCursorRect(bounds, cursor: c)
-        }
+        super.resetCursorRects()
+        controller?.resetViewCursorRects()
+    }
+    
+    open override func updateTrackingAreas() {
+        super.updateTrackingAreas()
+        controller?.updateViewTrackingAreas()
+    }
+    
+    open override func acceptsFirstMouse(for event: NSEvent?) -> Bool {
+        return true
     }
     
 }

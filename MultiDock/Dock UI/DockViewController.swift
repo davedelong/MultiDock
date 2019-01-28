@@ -35,11 +35,12 @@ class DockViewController: MDViewController {
     func displayApps(_ newApps: Array<NSRunningApplication>) {
         guard newApps != apps else { return }
         
+        
+        
         tiles.forEach {
             $0.view.removeFromSuperview()
             $0.removeFromParent()
         }
-        
         
         apps = newApps
         tiles = []

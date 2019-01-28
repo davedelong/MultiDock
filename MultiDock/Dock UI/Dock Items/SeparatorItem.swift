@@ -11,6 +11,7 @@ import Cocoa
 class SeparatorItem: MDViewController {
 
     private let preferredHeight: NSLayoutConstraint
+    private var startingPreferredHeight: CGFloat = 0
     
     init(guide: NSLayoutGuide) {
         preferredHeight = guide.heightAnchor.constraint(equalToConstant: 64)
@@ -27,15 +28,25 @@ class SeparatorItem: MDViewController {
         
         let pan = NSPanGestureRecognizer(target: self, action: #selector(panned(_:)))
         view.addGestureRecognizer(pan)
-        mdView.cursor = .resizeUpDown
     }
     
     override func viewDidAppear() {
         preferredHeight.isActive = true
     }
     
+    override func resetViewCursorRects() {
+        view.addCursorRect(view.bounds, cursor: .resizeUpDown)
+    }
+    
     @IBAction func panned(_ sender: NSPanGestureRecognizer) {
-        print("panning")
+        if sender.state == .began {
+            startingPreferredHeight = preferredHeight.constant
+        }
+        
+        let translation = sender.translation(in: nil)
+        
+        let yDifference = translation.y * 0.25
+        preferredHeight.constant = startingPreferredHeight + yDifference
     }
     
 }

@@ -51,7 +51,7 @@ class DockWindowController: NSWindowController, NSWindowDelegate {
         window?.isOpaque = false
         window?.backgroundColor = .clear
         
-        // the dock is at level 20
+        // the dock is at level 20, according to the deprecated .dock value
         window?.level = NSWindow.Level(rawValue: 21)
         window?.title = configuration.display.name
         window?.setFrame(configuration.display.bounds, display: true)
