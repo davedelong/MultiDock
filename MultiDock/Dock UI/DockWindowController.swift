@@ -23,7 +23,8 @@ class DockWindowController: NSWindowController, NSWindowDelegate {
     init(configuration: DockConfiguration) {
         self.configuration = configuration
         super.init(window: nil)
-        
+
+        shouldCascadeWindows = false
         showWindow(self)
         stack.displayApps(configuration.apps.map { $0.0 })
     }
