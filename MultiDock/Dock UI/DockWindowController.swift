@@ -85,4 +85,8 @@ class DockWindow: NSWindow {
     
     override var canBecomeKey: Bool { return true }
     
+    override var isKeyWindow: Bool { return true }
+    
+    override var acceptsFirstResponder: Bool { return true }
+    
 }

@@ -16,12 +16,27 @@ class ClickableItem: MDViewController {
     @IBOutlet private var image: NSImageView?
     @IBOutlet private var runningIndicator: NSProgressIndicator?
     
+    private lazy var nameLabel: NSTextField = {
+        let l = NSTextField(labelWithString: item.name.value)
+        l.font = NSFont.menuBarFont(ofSize: 14)
+        l.translatesAutoresizingMaskIntoConstraints = false
+        return l
+    }()
+    
     private lazy var namePopover: NSPopover = {
         let p = NSPopover()
         p.behavior = .applicationDefined
         p.animates = false
         let v = NSViewController()
-        v.view = NSTextField(labelWithString: item.name.value)
+        let c = NSView()
+        c.addSubview(nameLabel)
+        NSLayoutConstraint.activate([
+            nameLabel.leadingAnchor.constraint(equalTo: c.leadingAnchor, constant: 12),
+            nameLabel.topAnchor.constraint(equalTo: c.topAnchor, constant: 4),
+            nameLabel.centerXAnchor.constraint(equalTo: c.centerXAnchor),
+            nameLabel.centerYAnchor.constraint(equalTo: c.centerYAnchor)
+        ])
+        v.view = c
         p.contentViewController = v
         return p
     }()
@@ -68,10 +83,12 @@ class ClickableItem: MDViewController {
     
     override func rightClickAction(_ sender: Any) {
         guard let m = item.rightClickMenu() else { return }
+        if namePopover.isShown { namePopover.close() }
         NSMenu.popUpContextMenu(m, with: NSApp.currentEvent!, for: view)
     }
     
     override func mouseEntered(with event: NSEvent) {
+        nameLabel.stringValue = item.name.value
         namePopover.show(relativeTo: view.bounds, of: view, preferredEdge: .maxY)
     }
     
