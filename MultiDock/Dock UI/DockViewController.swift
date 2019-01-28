@@ -10,6 +10,7 @@ import Cocoa
 
 class DockViewController: MDViewController {
 
+    @IBOutlet private var visualEffectView: NSVisualEffectView?
     @IBOutlet private var stackView: NSStackView?
     
     private var apps = Array<NSRunningApplication>()
@@ -26,6 +27,11 @@ class DockViewController: MDViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        if #available(macOS 10.14, *) {
+            visualEffectView?.material = .underPageBackground
+        }
+
         view.addLayoutGuide(guide)
         mdView.acceptsFirstResponder = true
         view.layer?.cornerRadius = 6
