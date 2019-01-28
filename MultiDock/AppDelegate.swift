@@ -9,6 +9,9 @@
 import Cocoa
 import Quartz
 
+
+class DockApplication: NSApplication { }
+
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
     

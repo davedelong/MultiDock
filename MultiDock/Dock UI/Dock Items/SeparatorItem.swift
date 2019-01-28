@@ -34,8 +34,13 @@ class SeparatorItem: MDViewController {
         preferredHeight.isActive = true
     }
     
-    override func resetViewCursorRects() {
-        view.addCursorRect(view.bounds, cursor: .resizeUpDown)
+    override func updateViewTrackingAreas() {
+        let area = NSTrackingArea(rect: view.bounds, options: [.activeAlways, .cursorUpdate], owner: self, userInfo: nil)
+        view.addTrackingArea(area)
+    }
+    
+    override func cursorUpdate(with event: NSEvent) {
+        NSCursor.resizeUpDown.set()
     }
     
     @IBAction func panned(_ sender: NSPanGestureRecognizer) {

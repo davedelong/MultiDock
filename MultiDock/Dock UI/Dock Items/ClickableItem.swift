@@ -13,8 +13,18 @@ class ClickableItem: MDViewController {
     private let item: DockItem
     private let itemHeight: NSLayoutGuide
     
-    @IBOutlet private var button: NSButton?
+    @IBOutlet private var image: NSImageView?
     @IBOutlet private var runningIndicator: NSProgressIndicator?
+    
+    private lazy var namePopover: NSPopover = {
+        let p = NSPopover()
+        p.behavior = .applicationDefined
+        p.animates = false
+        let v = NSViewController()
+        v.view = NSTextField(labelWithString: item.name.value)
+        p.contentViewController = v
+        return p
+    }()
     
     convenience init(app: NSRunningApplication, guide: NSLayoutGuide) {
         self.init(item: Application(runningApplication: app), guide: guide)
@@ -34,7 +44,7 @@ class ClickableItem: MDViewController {
         super.viewDidLoad()
         
         item.icon.observe { [weak self] icon in
-            self?.button?.image = icon
+            self?.image?.image = icon
         }
         
         item.isRunning.observe { [weak self] state in
@@ -47,15 +57,26 @@ class ClickableItem: MDViewController {
         view.heightAnchor.constraint(equalTo: itemHeight.heightAnchor).isActive = true
     }
     
-    @IBAction func clickedButton(_ sender: NSButton) {
+    override func singleClickAction(_ sender: Any) {
         item.clickHandler()
     }
     
+    override func updateViewTrackingAreas() {
+        let area = NSTrackingArea(rect: view.bounds, options: [.activeAlways, .mouseEnteredAndExited], owner: self, userInfo: nil)
+        view.addTrackingArea(area)
+    }
+    
     override func rightClickAction(_ sender: Any) {
-        print("Right clicking?")
         guard let m = item.rightClickMenu() else { return }
-        
         NSMenu.popUpContextMenu(m, with: NSApp.currentEvent!, for: view)
+    }
+    
+    override func mouseEntered(with event: NSEvent) {
+        namePopover.show(relativeTo: view.bounds, of: view, preferredEdge: .maxY)
+    }
+    
+    override func mouseExited(with event: NSEvent) {
+        namePopover.close()
     }
     
 }

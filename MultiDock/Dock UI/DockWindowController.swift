@@ -79,3 +79,9 @@ class DockWindowController: NSWindowController, NSWindowDelegate {
         windowHeight = h
     }
 }
+
+class DockWindow: NSWindow {
+    
+    override var canBecomeKey: Bool { return true }
+    
+}

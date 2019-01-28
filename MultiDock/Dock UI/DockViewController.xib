@@ -20,7 +20,7 @@
                 <visualEffectView wantsLayer="YES" appearanceType="inheritedVibrantLight" blendingMode="behindWindow" material="underPageBackground" state="active" translatesAutoresizingMaskIntoConstraints="NO" id="Po4-IR-XRh">
                     <rect key="frame" x="0.0" y="0.0" width="480" height="272"/>
                     <subviews>
-                        <stackView wantsLayer="YES" distribution="equalSpacing" orientation="horizontal" alignment="top" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nIi-YK-aAf">
+                        <stackView wantsLayer="YES" distribution="equalSpacing" orientation="horizontal" alignment="top" spacing="0.0" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nIi-YK-aAf">
                             <rect key="frame" x="8" y="0.0" width="464" height="272"/>
                         </stackView>
                     </subviews>

@@ -11,6 +11,7 @@ import Cocoa
 class MDViewController: NSViewController {
     
     private var isObservingFrame = false
+    private var singleClickRecognizer: NSClickGestureRecognizer?
     private var rightClickRecognizer: NSClickGestureRecognizer?
     
     var mdView: MDView { return view as! MDView }
@@ -48,6 +49,15 @@ class MDViewController: NSViewController {
             NotificationCenter.default.addObserver(self, selector: #selector(viewDidResize(_:)), name: NSView.frameDidChangeNotification, object: view)
         }
         
+        if overrides(#selector(singleClickAction(_:)), upTo: MDViewController.self) {
+            let r = NSClickGestureRecognizer(target: self, action: #selector(singleClickAction(_:)))
+            r.numberOfClicksRequired = 1
+            r.buttonMask = 0x1
+            r.delaysPrimaryMouseButtonEvents = false
+            view.addGestureRecognizer(r)
+            singleClickRecognizer = r
+        }
+        
         if overrides(#selector(rightClickAction(_:)), upTo: MDViewController.self) {
             let r = NSClickGestureRecognizer(target: self, action: #selector(rightClickAction(_:)))
             r.numberOfClicksRequired = 1
@@ -55,8 +65,6 @@ class MDViewController: NSViewController {
             r.delaysPrimaryMouseButtonEvents = false
             view.addGestureRecognizer(r)
             rightClickRecognizer = r
-            
-            mdv.acceptsFirstResponder = true
         }
         
     }
@@ -65,6 +73,7 @@ class MDViewController: NSViewController {
     
     open func viewDidMoveToWindow(_ window: NSWindow?) { }
     
+    @objc open func singleClickAction(_ sender: Any) { }
     @objc open func rightClickAction(_ sender: Any) { }
     
     @objc open func viewDidResize(_ notification: Notification) { }
